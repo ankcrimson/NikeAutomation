@@ -1,5 +1,7 @@
 package com.helpers;
 
+import io.appium.java_client.android.AndroidDriver;
+
 import java.net.URL;
 import java.util.Properties;
 
@@ -69,7 +71,7 @@ public WebDriver getDriver()
 		    capabilities.setCapability(CapabilityType.VERSION, "4.4.2");
 		    capabilities.setCapability("platformName", "Android");
 		    
-		    driver = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+		    driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 			}catch(Exception ex){ex.printStackTrace();}
 		}
 	}

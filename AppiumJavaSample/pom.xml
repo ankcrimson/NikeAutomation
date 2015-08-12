@@ -35,5 +35,11 @@
 	<artifactId>cucumber-picocontainer</artifactId>
 	<version>1.2.4</version>
 </dependency>
+<dependency>
+	<groupId>io.appium</groupId>
+	<artifactId>java-client</artifactId>
+	<version>3.1.0</version>
+</dependency>
+
    </dependencies>
 </project>

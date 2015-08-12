@@ -1,9 +1,13 @@
 package com.business;
 
+import io.appium.java_client.*;
+import io.appium.java_client.android.AndroidDriver;
+
+import java.util.HashMap;
 import java.util.List;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.internal.TouchAction;
 import org.openqa.selenium.interactions.touch.TouchActions;
 
 import com.helpers.DriverWrapper;
@@ -43,7 +47,8 @@ public class Home extends CommonBusiness {
 		{
 			if(elem.isDisplayed()&&elem.isEnabled())
 			{
-				ref_element.get(n-1).click();
+				elem.click();
+				System.out.println("Chosen");
 				break;
 			}
 		}
@@ -51,9 +56,18 @@ public class Home extends CommonBusiness {
 	
 	public void scroll(DriverWrapper wrapper)
 	{
-		TouchActions touchs=new TouchActions(wrapper.getDriver());
-		touchs.clickAndHold();
-		touchs.scroll(10, 10);
-		touchs.release();
+		MobileDriver driver=(MobileDriver)wrapper.getDriver();
+		HomePage page=new HomePage();
+		try{
+			TouchAction act1=new TouchAction(driver);
+			act1.press(200, 100);
+			act1.press(100, 100);
+			act1.release();
+			act1.perform();
+		}catch(Throwable ex){ex.printStackTrace();}
+		
+		AndroidDriver driver1=(AndroidDriver)driver;
+		driver1.swipe(929, 440, 120, 440, 1000);
+		
 	}
 }
