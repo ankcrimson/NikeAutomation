@@ -9,4 +9,5 @@
 * Checkout this code
 * Install Maven on machine if not already present
 * Run maven update on project [mvn install]
+* Give execute previlage to "chromedriver" executables within "src/main/resources/execs"
 * Run "com.tests.CucumberRunner.java" from "src/main/java" as a JUnit Test Case
