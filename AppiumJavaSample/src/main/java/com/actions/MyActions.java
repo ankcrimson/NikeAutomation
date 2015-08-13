@@ -18,10 +18,11 @@ public class MyActions {
 	}
 
 	
-	@Given("^Browser is (.+) on (.+)$")
-	public void browserSelection(String browser,String platform) throws Throwable {
+	@Given("^Browser is (.+) on (.+) and os is (.+)$")
+	public void browserSelection(String browser,String platform,String os) throws Throwable {
 		System.setProperty("browser", browser);
 		System.setProperty("platform", platform);
+		System.setProperty("os", os);
 		setup();
 	   // throw new PendingException();
 	}

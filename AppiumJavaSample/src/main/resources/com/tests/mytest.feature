@@ -2,7 +2,7 @@ Feature: Finding Shoe and Applying Gestures
 
 Scenario Outline: Finding Shoe and Applying Gestures
 
-    Given Browser is <browser> on <platform>
+    Given Browser is <browser> on <platform> and os is <os>
     And Webpage is http://www.store.nike.com
     Then choose country_chooser
     Then choose <country>
@@ -19,5 +19,5 @@ Scenario Outline: Finding Shoe and Applying Gestures
     Then close browser
     
 Examples:
-    | browser | platform | country |
-    |  chrome   |  mobile  |  US  |
+    | browser | platform | country | os |
+    |  chrome   |  mobile  |  US  | android |

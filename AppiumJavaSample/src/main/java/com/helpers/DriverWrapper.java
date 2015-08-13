@@ -34,6 +34,7 @@ public WebDriver getDriver()
      */
 	
 	String platform=props.getProperty("platform");
+	String device_os=props.getProperty("os");
 	String browser="firefox";
 	
 	if(props.containsKey("browser"))
@@ -60,7 +61,7 @@ public WebDriver getDriver()
 			System.setProperty("webdriver.chrome.driver", "src/main/resources/execs/chromedriver.exe");
 		driver=new ChromeDriver();
 		}
-		else
+		else if(device_os.equalsIgnoreCase("android"))
 		{
 			try{
 			DesiredCapabilities  capabilities = new DesiredCapabilities();
@@ -70,6 +71,20 @@ public WebDriver getDriver()
 		   // capabilities.setCapability(CapabilityType.BROWSER_NAME, "");
 		    capabilities.setCapability(CapabilityType.VERSION, "4.4.2");
 		    capabilities.setCapability("platformName", "Android");
+		    
+		    driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+			}catch(Exception ex){ex.printStackTrace();}
+		}
+		else if(device_os.equalsIgnoreCase("ios"))
+		{
+			try{
+			DesiredCapabilities  capabilities = new DesiredCapabilities();
+		    capabilities.setCapability("deviceName","Nirajbrands");
+		    capabilities.setCapability("touchEnabled",true);
+		    capabilities.setCapability("browserName", "Chrome");
+		   // capabilities.setCapability(CapabilityType.BROWSER_NAME, "");
+		    capabilities.setCapability(CapabilityType.VERSION, "4.4.2");
+		    capabilities.setCapability("platformName", "iOS");
 		    
 		    driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 			}catch(Exception ex){ex.printStackTrace();}
