@@ -4,6 +4,7 @@
   <artifactId>AppiumJavaSample</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
+<build>
 <plugins>
   <plugin>
   <groupId>org.apache.maven.plugins</groupId>
@@ -54,6 +55,7 @@
   </executions>
 </plugin>
 </plugins>
+</build>
   <dependencies>
       <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
