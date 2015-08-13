@@ -1,6 +1,7 @@
 package com.helpers;
 
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
 
 import java.net.URL;
 import java.util.Properties;
@@ -86,7 +87,7 @@ public WebDriver getDriver()
 		    capabilities.setCapability(CapabilityType.VERSION, "4.4.2");
 		    capabilities.setCapability("platformName", "iOS");
 		    
-		    driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+		    driver = new IOSDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 			}catch(Exception ex){ex.printStackTrace();}
 		}
 	}
