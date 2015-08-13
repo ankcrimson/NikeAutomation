@@ -65,9 +65,10 @@ public class Home extends CommonBusiness {
 			act1.release();
 			act1.perform();
 		}catch(Throwable ex){ex.printStackTrace();}
-		
+		try{
 		AndroidDriver driver1=(AndroidDriver)driver;
 		driver1.swipe(929, 440, 120, 440, 1000);
+		}catch(Throwable ex){ex.printStackTrace();}
 		
 	}
 }

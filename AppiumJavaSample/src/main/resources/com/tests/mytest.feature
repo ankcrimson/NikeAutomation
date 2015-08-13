@@ -14,7 +14,7 @@ Scenario Outline: Finding Shoe and Applying Gestures
     Then choose Running
     Then wait for 5000 ms
     Then choose shoe
-    Then sample scroll
+#    Then sample scroll
     Then wait for 3000 ms
     Then close browser
     
