@@ -21,4 +21,4 @@ Scenario Outline: Finding Shoe and Applying Gestures
 Examples:
     | browser | platform | country | os |
     |  chrome   |  mobile  |  US  | android |
-    |  chrome   |  mobile  |  US  | ios |
+    |  safari   |  mobile  |  US  | ios |

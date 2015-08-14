@@ -91,7 +91,11 @@ public WebDriver getDriver()
 			
 			}catch(Exception ex){ex.printStackTrace();}
 		}
-		else if(device_os.equalsIgnoreCase("ios"))
+		
+	}
+	else if(browser.equals("safari"))
+	{
+		if(device_os.equalsIgnoreCase("ios"))
 		{
 			try{
 				DesiredCapabilities  capabilities = new DesiredCapabilities();
@@ -115,6 +119,7 @@ public WebDriver getDriver()
 				}catch(Exception ex){ex.printStackTrace();}
 		}
 	}
+	
 	else
 	{
 		driver=new FirefoxDriver();
