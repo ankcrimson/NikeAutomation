@@ -25,7 +25,7 @@ public WebDriver getDriver()
 		return driver;
 	Properties props=System.getProperties();
 	Properties env=new Properties();
-    File propfile=new File("src/main/resources/credentials.properties");
+    File propfile=new File("src/credentials/credentials.properties");
     try{
     	java.io.FileReader fr=new java.io.FileReader(propfile);
     	env.load(fr); 
