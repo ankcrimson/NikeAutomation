@@ -74,13 +74,7 @@ public WebDriver getDriver()
 		{
 			try{
 			DesiredCapabilities  capabilities = new DesiredCapabilities();
-		    //capabilities.setCapability("deviceName","Nirajbrands");
-		    //capabilities.setCapability("touchEnabled",true);
-		    //capabilities.setCapability("browserName", "Chrome");
-		    //capabilities.setCapability(CapabilityType.VERSION, "4.4.2");
-		    //capabilities.setCapability("platformName", "Android");
 		    //----TESTDROID
-			
 			capabilities.setCapability("platformName", "Android");
 	        capabilities.setCapability("deviceName", "Android Device");
 	        capabilities.setCapability("browserName", "Chrome");
@@ -92,11 +86,7 @@ public WebDriver getDriver()
 	        //capabilities.setCapability("testdroid_device", "Samsung Galaxy Nexus GT-I9250 4.2.2"); // Freemium device
 	        //capabilities.setCapability("testdroid_device", "Nvidia Shield Tablet"); // Freemium device
 	        capabilities.setCapability("testdroid_device", "Samsung Galaxy Nexus SPH-L700 4.3"); // Freemium device
-	        
-	        
-	        //capabilities.setCapability("testdroid_app", "Chrome");
-		    
-		    //----TESTDROID
+	        //----TESTDROID
 		    driver = new AndroidDriver(new URL("http://appium.testdroid.com/wd/hub"), capabilities);
 			
 			}catch(Exception ex){ex.printStackTrace();}
@@ -105,17 +95,10 @@ public WebDriver getDriver()
 		{
 			try{
 				DesiredCapabilities  capabilities = new DesiredCapabilities();
-			    //capabilities.setCapability("deviceName","Nirajbrands");
-			    //capabilities.setCapability("touchEnabled",true);
-			    //capabilities.setCapability("browserName", "Chrome");
-			    //capabilities.setCapability(CapabilityType.VERSION, "4.4.2");
-			    //capabilities.setCapability("platformName", "Android");
 			    //----TESTDROID
-				
 				capabilities.setCapability("platformName", "iOS");
 		        capabilities.setCapability("device", "iphone");
 		        capabilities.setCapability("deviceName", "iOS Phone");
-
 		        capabilities.setCapability("browserName", "Safari");
 				capabilities.setCapability("testdroid_username", testdroid_username);
 		        capabilities.setCapability("testdroid_password", testdroid_password);
@@ -126,10 +109,6 @@ public WebDriver getDriver()
 		        capabilities.setCapability("testdroid_device", "iPhone 5 A1429 6.1.4");
 		        //capabilities.setCapability("testdroid_device", "iPhone 4S A1387 6.1.3");
 		        //capabilities.setCapability("testdroid_device", "iPad 2 A1395 7.0.4");
-		        
-		        
-		        //capabilities.setCapability("testdroid_app", "Chrome");
-			    
 			    //----TESTDROID
 			    driver = new IOSDriver(new URL("http://appium.testdroid.com/wd/hub"), capabilities);
 				
