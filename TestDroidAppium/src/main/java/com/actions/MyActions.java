@@ -1,6 +1,7 @@
 package com.actions;
 
 import java.io.File;
+import java.util.Date;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -14,12 +15,16 @@ import cucumber.api.java.en.Then;
 
 public class MyActions {
 	DriverWrapper wrapper;
-	
-	
+	String screenshots="target/screenshots/";
+	File screenshotDir;
 	public void setup()
 	{
 		if(wrapper==null)
 		wrapper=new DriverWrapper();
+		screenshots+=(new Date()).getTime()+"/";
+		screenshotDir=new File(screenshots);
+		screenshotDir.mkdirs();
+		System.out.println("Using Screenshot Directory As "+screenshots);
 	}
 
 	
@@ -38,6 +43,8 @@ public class MyActions {
 		Home business=new Home();
 		business.openURL(wrapper, url);
 		File screenshot = ((TakesScreenshot)wrapper.getDriver()).getScreenshotAs(OutputType.FILE);
+		File newScsht=new File(screenshotDir,(new Date()).getTime()+"_openUrl.png");
+		screenshot.renameTo(newScsht);
 	}
 	
 
@@ -46,6 +53,8 @@ public void searchForText(String text) throws Throwable {
     Home home=new Home();
     home.searchText(wrapper, text);
     File screenshot = ((TakesScreenshot)wrapper.getDriver()).getScreenshotAs(OutputType.FILE);
+    File newScsht=new File(screenshotDir,(new Date()).getTime()+"_searchText.png");
+	screenshot.renameTo(newScsht);
 }
 
 @Then("^click on (\\d+)st link$")
@@ -54,6 +63,8 @@ public void clickOnLinkPos(int n) throws Throwable {
 	Home home=new Home();
     home.clickNthLink(wrapper, n);
     File screenshot = ((TakesScreenshot)wrapper.getDriver()).getScreenshotAs(OutputType.FILE);
+    File newScsht=new File(screenshotDir,(new Date()).getTime()+"_clickLink.png");
+	screenshot.renameTo(newScsht);
 }
 
 @Then("^pick (\\d) from (.+) list$")
@@ -62,6 +73,8 @@ public void clickOnLink(int n,String eName) throws Throwable {
 	Home home=new Home();
     home.choose(wrapper,n, eName);
     File screenshot = ((TakesScreenshot)wrapper.getDriver()).getScreenshotAs(OutputType.FILE);
+    File newScsht=new File(screenshotDir,(new Date()).getTime()+"_clickLink_2.png");
+	screenshot.renameTo(newScsht);
 }
 
 @Then("^choose (.+)$")
@@ -70,6 +83,8 @@ public void clickOnLink(String eName) throws Throwable {
 	Home home=new Home();
     home.choose(wrapper, eName);
     File screenshot = ((TakesScreenshot)wrapper.getDriver()).getScreenshotAs(OutputType.FILE);
+    File newScsht=new File(screenshotDir,(new Date()).getTime()+"_clickLink_3.png");
+	screenshot.renameTo(newScsht);
 }
 
 
@@ -78,6 +93,8 @@ public void waitForMillis(int time) throws Throwable {
     int wait=time;
     Thread.sleep(wait);
     File screenshot = ((TakesScreenshot)wrapper.getDriver()).getScreenshotAs(OutputType.FILE);
+    File newScsht=new File(screenshotDir,(new Date()).getTime()+"_waitMillis.png");
+	screenshot.renameTo(newScsht);
 }
 
 
@@ -85,7 +102,7 @@ public void waitForMillis(int time) throws Throwable {
 public void sampleScroll() throws Throwable {
     Home home=new Home();
     home.scroll(wrapper);
-    File screenshot = ((TakesScreenshot)wrapper.getDriver()).getScreenshotAs(OutputType.FILE);
+    
 }
 
 
