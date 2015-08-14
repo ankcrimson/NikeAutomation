@@ -45,7 +45,7 @@ public WebDriver getDriver()
 	String platform=props.getProperty("platform");
 	String device_os=props.getProperty("os");
 	String browser="firefox";
-	
+	String device=props.getProperty("device");
 	if(props.containsKey("browser"))
 	{
 	browser=props.getProperty("browser").trim().toLowerCase();	
@@ -84,8 +84,9 @@ public WebDriver getDriver()
 	        capabilities.setCapability("testdroid_project", "LocalAppium");
 	        capabilities.setCapability("testdroid_testrun", "Android Run 1");
 	        //capabilities.setCapability("testdroid_device", "Samsung Galaxy Nexus GT-I9250 4.2.2"); // Freemium device
+	        capabilities.setCapability("testdroid_device", device); // Freemium device
 	        //capabilities.setCapability("testdroid_device", "Nvidia Shield Tablet"); // Freemium device
-	        capabilities.setCapability("testdroid_device", "Samsung Galaxy Nexus SPH-L700 4.3"); // Freemium device
+	        //capabilities.setCapability("testdroid_device", "Samsung Galaxy Nexus SPH-L700 4.3"); // Freemium device
 	        //----TESTDROID
 		    driver = new AndroidDriver(new URL("http://appium.testdroid.com/wd/hub"), capabilities);
 			
@@ -110,7 +111,8 @@ public WebDriver getDriver()
 		        capabilities.setCapability("testdroid_project", "LocaliOSAppium");
 		        capabilities.setCapability("testdroid_testrun", "IOS Run 1");
 		      //capabilities.setCapability("testdroid_device", "iPad 3 A1416 8.2");
-		        capabilities.setCapability("testdroid_device", "iPhone 5 A1429 6.1.4");
+		        //capabilities.setCapability("testdroid_device", "iPhone 5 A1429 6.1.4");
+		        capabilities.setCapability("testdroid_device", device);
 		        //capabilities.setCapability("testdroid_device", "iPhone 4S A1387 6.1.3");
 		        //capabilities.setCapability("testdroid_device", "iPad 2 A1395 7.0.4");
 			    //----TESTDROID

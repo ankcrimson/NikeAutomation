@@ -17,22 +17,25 @@ public class MyActions {
 	DriverWrapper wrapper;
 	String screenshots="target/screenshots/";
 	File screenshotDir;
+	String device;
 	public void setup()
 	{
 		if(wrapper==null)
 		wrapper=new DriverWrapper();
-		screenshots+=(new Date()).getTime()+"/";
+		screenshots+=(new Date()).getTime()+"_"+device+"/";
 		screenshotDir=new File(screenshots);
 		screenshotDir.mkdirs();
 		System.out.println("Using Screenshot Directory As "+screenshots);
 	}
 
 	
-	@Given("^Browser is (.+) on (.+) and os is (.+)$")
-	public void browserSelection(String browser,String platform,String os) throws Throwable {
+	@Given("^Browser is (.+) on (.+) and os is (.+) with (.+)$")
+	public void browserSelection(String browser,String platform,String os,String device) throws Throwable {
 		System.setProperty("browser", browser);
 		System.setProperty("platform", platform);
 		System.setProperty("os", os);
+		System.setProperty("device", device);
+		this.device=device.replaceAll(" ", "_");
 		setup();
 	   // throw new PendingException();
 	}
@@ -102,6 +105,9 @@ public void waitForMillis(int time) throws Throwable {
 public void sampleScroll() throws Throwable {
     Home home=new Home();
     home.scroll(wrapper);
+    File screenshot = ((TakesScreenshot)wrapper.getDriver()).getScreenshotAs(OutputType.FILE);
+    File newScsht=new File(screenshotDir,(new Date()).getTime()+"_scroll.png");
+	screenshot.renameTo(newScsht);
     
 }
 
