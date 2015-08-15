@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 import junit.framework.TestCase;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(glue={"com.actions"})
+@CucumberOptions(glue={"com.actions"},tags={"@Complete"})
 public class CucumberRunner{
 
 	

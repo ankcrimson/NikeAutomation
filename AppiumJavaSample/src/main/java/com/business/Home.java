@@ -54,21 +54,70 @@ public class Home extends CommonBusiness {
 		}
 	}
 	
-	public void scroll(DriverWrapper wrapper)
-	{
-		MobileDriver driver=(MobileDriver)wrapper.getDriver();
-		HomePage page=new HomePage();
-		try{
-			TouchAction act1=new TouchAction(driver);
-			act1.press(200, 100);
-			act1.press(100, 100);
+	public void scroll(DriverWrapper wrapper) {
+		MobileDriver driver = (MobileDriver) wrapper.getDriver();
+		HomePage page = new HomePage();
+	/*	try {
+			TouchAction act1 = new TouchAction(driver);
+			act1.press(583, 752);
+			act1.moveTo(218, 752);
 			act1.release();
 			act1.perform();
-		}catch(Throwable ex){ex.printStackTrace();}
-		try{
-		AndroidDriver driver1=(AndroidDriver)driver;
-		driver1.swipe(929, 440, 120, 440, 1000);
-		}catch(Throwable ex){ex.printStackTrace();}
+			// act1.perform();
+			driver.performTouchAction(act1);
+			System.out.println(1);
+		} catch (Throwable ex) {
+			System.out.println("--" + ex.getLocalizedMessage());
+		}
+		try {
+			driver.swipe(583, 752, 218, 752, 1000);
+			System.out.println(2);
+		} catch (Throwable ex) {
+			System.out.println("--" + ex.getLocalizedMessage());
+		}
+		
+		try {
+			TouchAction act1=new TouchAction(driver);
+			act1.longPress(583, 742);
+			act1.perform();
+			driver.performTouchAction(act1);
+			System.out.println(2);
+		} catch (Throwable ex) {
+			System.out.println("--" + ex.getLocalizedMessage());
+		}
+		try {
+			TouchAction act1=new TouchAction(driver);
+			act1.longPress(583, 742);
+			act1.moveTo(218, 752);
+			act1.release();
+			//driver.performTouchAction(act1);
+			act1.perform();
+			TouchAction act2=new TouchAction(driver);
+			act2.longPress(218, 742);
+			act2.moveTo(518, 742);
+			act2.release();
+			act2.perform();
+			//driver.performTouchAction(act1);
+			
+			MultiTouchAction act=new MultiTouchAction(driver);
+			act.add(act1);
+			act.add(act2);
+			act.perform();
+			driver.performMultiTouchAction(act);
+			System.out.println(2);
+		} catch (Throwable ex) {
+			System.out.println("--" + ex.getLocalizedMessage());
+		}
+		*/
+		try {
+			TouchAction action=new TouchAction(driver);
+			action.press(0, 1533).waitAction(300).moveTo(0, 219).release()
+			.perform();
+			System.out.println("3333333333333333");
+		} catch (Throwable ex) {
+			System.out.println("--" + ex.getLocalizedMessage());
+			ex.printStackTrace();
+		}
 		
 	}
 }
