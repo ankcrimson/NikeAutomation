@@ -25,15 +25,15 @@ public class CompletelyNew {
         File appDir = new File("src/main/resources");
         File app = new File(appDir, "selendroid-test-app.apk"); //my case ìdemo1.apkî
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("autoLaunch", true);        
+        //
+//        capabilities.setCapability("autoLaunch", true);        
         capabilities.setCapability("deviceName","GT-I9300");
-        //capabilities.setCapability("autoWebview",  "true");
-        //capabilities.setCapability(CapabilityType.VERSION, "4.4.2");
-        //capabilities.setCapability(CapabilityType.PLATFORM, Platform.WINDOWS);
+        capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("app", app.getAbsolutePath());
-        capabilities.setCapability("appPackage", "io.selendroid.testapp");  
-        capabilities.setCapability("appActivity", ".HomeScreenActivity");  //my case RootActivity
+        capabilities.setCapability("platformVersion", "4.3");
+        capabilities.setCapability("automationName","selendroid");
+        //capabilities.setCapability("appPackage", "io.selendroid.testapp");  
+        //capabilities.setCapability("appActivity", ".HomeScreenActivity");  //my case RootActivity
         try{
         driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
         
