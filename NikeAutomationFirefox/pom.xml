@@ -103,6 +103,24 @@
     <version>0.16.0</version>
     <artifactId>selendroid-client</artifactId>
 </dependency>
+
+
+  <dependency>
+            <groupId>net.sf.sociaal</groupId>
+            <artifactId>chimpchat</artifactId>
+            <version>22.6.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.android.tools</groupId>
+            <artifactId>sdklib</artifactId>
+            <version>22.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.android.tools.ddms</groupId>
+            <artifactId>ddmlib</artifactId>
+            <version>22.0</version>
+        </dependency>
+
    </dependencies>
   
 </project>

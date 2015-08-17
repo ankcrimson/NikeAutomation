@@ -31,7 +31,7 @@ public class CompletelyNew {
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("app", app.getAbsolutePath());
         capabilities.setCapability("platformVersion", "4.3");
-        capabilities.setCapability("automationName","selendroid");
+        //capabilities.setCapability("automationName","selendroid");
         //capabilities.setCapability("appPackage", "io.selendroid.testapp");  
         //capabilities.setCapability("appActivity", ".HomeScreenActivity");  //my case RootActivity
         try{

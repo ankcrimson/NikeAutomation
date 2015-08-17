@@ -1,9 +1,9 @@
 package com.nike.tests;
 
-import io.selendroid.client.SelendroidDriver;
-import io.selendroid.client.TouchAction;
-import io.selendroid.client.TouchActionBuilder;
-import io.selendroid.common.SelendroidCapabilities;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidDriver;
 
 import java.io.File;
 import java.net.URL;
@@ -15,30 +15,34 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
+
+import com.android.chimpchat.adb.AdbBackend;
+import com.android.chimpchat.core.IChimpDevice;
+
 import org.openqa.selenium.interactions.touch.TouchActions;
 
 public class AndroidWebViewTest {
-    private SelendroidDriver driver;
+    private AppiumDriver driver;
 
     @Before
     public void setUp() throws Exception {
         // set up appium
-//        File classpathRoot = new File(System.getProperty("user.dir"));
-//        File app = new File(classpathRoot, "src/main/resources/selendroid-test-app.apk");
-//        DesiredCapabilities capabilities = new DesiredCapabilities();
+        File classpathRoot = new File(System.getProperty("user.dir"));
+        File app = new File(classpathRoot, "src/main/resources/selendroid-test-app.apk");
+        DesiredCapabilities capabilities = new DesiredCapabilities();
 //        
-//        capabilities.setCapability("browserName","android");
-//        capabilities.setCapability("deviceName","Android");
-//        capabilities.setCapability("platformName", "Android");
-//        capabilities.setCapability("device","Selendroid");
-//        capabilities.setCapability("app", app.getAbsolutePath());
-//        capabilities.setCapability("appPackage", "io.selendroid.testapp");
-//        capabilities.setCapability("appActivity", ".HomeScreenActivity");
-//        driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+        capabilities.setCapability("browserName","android");
+        capabilities.setCapability("deviceName","Android");
+        capabilities.setCapability("platformName", "Android");
+        capabilities.setCapability("automationName","selendroid");
+        capabilities.setCapability("app", app.getAbsolutePath());
+        capabilities.setCapability("appPackage", "io.selendroid.testapp");
+        capabilities.setCapability("appActivity", ".HomeScreenActivity");
+        driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
     	
-    	SelendroidCapabilities caps = new SelendroidCapabilities("io.selendroid.testapp:0.10.0");
-    	driver = new SelendroidDriver(caps);
-    	
+//    	SelendroidCapabilities caps = new SelendroidCapabilities("io.selendroid.testapp:0.10.0");
+//    	driver = new SelendroidDriver(caps);
+//    	
     }
     @After
     public void tearDown() throws Exception {
@@ -54,7 +58,7 @@ public class AndroidWebViewTest {
         button.click();
         Thread.sleep(6000);
         
-        TouchActions e1=new TouchActions(driver);
+        /*TouchActions e1=new TouchActions(driver);
         WebElement pages = driver.findElement(By.id("vp_pages"));
         TouchActions flick = new TouchActions(driver).flick(pages, -100, 0, 0);
         flick.perform();
@@ -63,7 +67,7 @@ public class AndroidWebViewTest {
         		pointerMove(-100, 400).pointerUp().build(); 
         		ta.perform(driver);
         
-        
+        */
         
         Set<String> contextNames = driver.getContextHandles();
         System.out.println(contextNames);
@@ -72,9 +76,11 @@ public class AndroidWebViewTest {
         	  System.out.println(contextName);
               driver.context(contextName);
               driver.get("http://m.nike.com/us/en_us/pd/air-zoom-pegasus-32-running-shoe/pid-10294427/pgid-10266840");
+              System.out.println("link opened");
           }
         }
-        System.out.println("link opened");
+        //driver.context("NATIVE_APP");
+        
         //NATIVE_APP
 //        contextNames = driver.getContextHandles();
 //        for (String contextName : contextNames) {
@@ -83,16 +89,29 @@ public class AndroidWebViewTest {
 //              driver.context(contextName);
 //          }
 //        }
-        Thread.sleep(6000);
-        /*
-        TouchAction act=new TouchAction(driver);
-        act.press(590, 850);
-        act.moveTo(100, 850);
-        act.release();
-        act.perform();
-        driver.performTouchAction(act);
-        *///driver.swipe(590, 850, 100, 850, 1000);
+        Thread.sleep(16000);
+//        
+        try{
+        WebElement el=driver.findElement(By.id("rect"));
         
+        TouchAction act=new TouchAction(driver);
+        act.press(el, 10, 10).release().perform();
+        }catch(Throwable th){th.printStackTrace();}
+        
+        try{
+            WebElement el=driver.findElement(By.id("rect"));
+            
+            TouchAction act=new TouchAction(driver);
+            act.press(200, 800).moveTo(-50, 0).perform();
+            }catch(Throwable th){th.printStackTrace();}
+            
+        
+        
+//        IChimpDevice chimpDevice;
+//        AdbBackend adbBackend = new AdbBackend();
+//        chimpDevice = adbBackend.waitForConnection();
+//        chimpDevice.drag(300, 800, 100, 800, 30, 1000);
+//        chimpDevice.dispose();
         
         
         Thread.sleep(6000);

@@ -12,12 +12,12 @@ PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(__file__), p)
 )
 
-class ComplexAndroidTests(unittest.TestCase):
+class AndroidSelenV2(unittest.TestCase):
     def setUp(self):
         desired_caps = {}
         desired_caps['browserName'] = 'android'
         desired_caps['platformName'] = 'Android'
-        desired_caps['platformVersion'] = '4.3'
+        desired_caps['platformVersion'] = '5.0'
         desired_caps['deviceName'] = 'GT-I9300'
         desired_caps['automationName'] = 'selendroid'
         desired_caps['app'] = PATH(
@@ -46,13 +46,17 @@ class ComplexAndroidTests(unittest.TestCase):
         webview = self.driver.contexts[1]
         print ('>>%s<<' % webview)
         #contexts = self.driver.contexts
+
         self.driver.switch_to.context(webview)
         self.driver.get("http://m.nike.com/us/en_us/pd/air-zoom-pegasus-32-running-shoe/pid-10294427/pgid-10266840")
 
         sleep(10)
 
+        print ('>>%s<<' % selfview)
         self.driver.switch_to.context(selfview)
         
+
+
 
         print ('Now trying TouchAction')
         e1 = TouchAction()
@@ -131,5 +135,5 @@ class ComplexAndroidTests(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    suite = unittest.TestLoader().loadTestsFromTestCase(ComplexAndroidTests)
+    suite = unittest.TestLoader().loadTestsFromTestCase(AndroidSelenV2)
     unittest.TextTestRunner(verbosity=2).run(suite)
