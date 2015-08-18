@@ -75,6 +75,16 @@ public void clickOnLink(String eName) throws Throwable {
 }
 
 
+
+@Then("^sendkeys (.+) in (.+)$")
+public void sendKeys(String text,String eName) throws Throwable {
+    //throw new PendingException();
+	Home home=new Home();
+    home.sendText(wrapper, eName, text);
+    File screenshot = ((TakesScreenshot)wrapper.getDriver()).getScreenshotAs(OutputType.FILE);
+}
+
+
 @Then("^select (.+)$")
 public void select(String skusize) throws Throwable {
     //throw new PendingException();

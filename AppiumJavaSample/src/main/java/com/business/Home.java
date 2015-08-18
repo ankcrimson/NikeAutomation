@@ -79,6 +79,13 @@ public class Home extends CommonBusiness {
 		}
 	}
 	
+	public void sendText(DriverWrapper wrapper,String ref,String text)
+	{
+		HomePage page=new HomePage();
+		WebElement field=page.getElement(wrapper, ref);
+		field.sendKeys(text);
+	}
+	
 	public void scroll(DriverWrapper wrapper) {
 		MobileDriver driver = (MobileDriver) wrapper.getDriver();
 		HomePage page = new HomePage();
