@@ -1,4 +1,4 @@
-@Complete
+@FindingShoes
 Feature: Finding Shoe and Applying Gestures
 
 Scenario Outline: Finding Shoe and Applying Gestures

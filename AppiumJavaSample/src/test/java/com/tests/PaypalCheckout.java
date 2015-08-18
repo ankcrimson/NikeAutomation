@@ -9,8 +9,8 @@ import cucumber.api.junit.Cucumber;
 import junit.framework.TestCase;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(glue={"com.actions"},tags={"@Complete"})
-public class CucumberRunner{
+@CucumberOptions(glue={"com.actions"},tags={"@MemberCheckout"})
+public class PaypalCheckout{
 
 	
 	public void mytest()

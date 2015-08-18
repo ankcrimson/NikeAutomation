@@ -1,5 +1,6 @@
 package com.pages;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.openqa.selenium.WebElement;
@@ -26,4 +27,10 @@ public class HomePage extends CommonPage {
 	{
 		return PageElementsHelper.getWebElements(wrapper, getPageName(), fieldName);
 	}
+	
+	public HashMap<String,String> getTagValue(String fieldName)
+	{
+		return PageElementsHelper.getTagValue(getPageName(), fieldName);
+	}
+	
 }

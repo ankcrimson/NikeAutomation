@@ -7,6 +7,7 @@ import org.openqa.selenium.TakesScreenshot;
 
 import com.business.Home;
 import com.helpers.DriverWrapper;
+import com.helpers.PageElementsHelper;
 
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
@@ -25,6 +26,7 @@ public class MyActions {
 	
 	@Given("^Browser is (.+) on (.+) and os is (.+)$")
 	public void browserSelection(String browser,String platform,String os) throws Throwable {
+		Class.forName("com.helpers.PageElementsHelper");
 		System.setProperty("browser", browser);
 		System.setProperty("platform", platform);
 		System.setProperty("os", os);
@@ -70,6 +72,23 @@ public void clickOnLink(String eName) throws Throwable {
 	Home home=new Home();
     home.choose(wrapper, eName);
     File screenshot = ((TakesScreenshot)wrapper.getDriver()).getScreenshotAs(OutputType.FILE);
+}
+
+
+@Then("^select (.+)$")
+public void select(String skusize) throws Throwable {
+    //throw new PendingException();
+	Home home=new Home();
+    home.select(wrapper, skusize);
+    File screenshot = ((TakesScreenshot)wrapper.getDriver()).getScreenshotAs(OutputType.FILE);
+}
+
+@Then("^scroll (\\d+) (\\d+)$")
+public void scroll(int x, int y) throws Throwable {
+    //throw new PendingException();
+	Home home=new Home();
+    home.scroll(wrapper, x, y);
+	File screenshot = ((TakesScreenshot)wrapper.getDriver()).getScreenshotAs(OutputType.FILE);
 }
 
 

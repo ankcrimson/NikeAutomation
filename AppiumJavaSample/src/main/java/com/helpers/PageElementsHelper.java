@@ -79,6 +79,22 @@ public class PageElementsHelper{
 	
 	*/
 
+	
+	public static HashMap<String,String> getTagValue(String pageName,String fieldName)
+	{
+		int pageNameStart=pageName.lastIndexOf(".");
+		HashMap<String,String> elementPathMap=null;
+		pageName=pageName.substring(pageNameStart+1);
+		//System.out.println("PageName="+pageName+",FieldName="+fieldName);
+		try{
+		elementPathMap=allProps.get(pageName).get(fieldName);
+		}catch(Exception e){System.out.println(allProps);System.out.println("Error for:\nPageName="+pageName+",FieldName="+fieldName);e.printStackTrace();return null;}
+		
+	return elementPathMap;
+	
+	}
+	
+	
 	public static WebElement getWebElement(DriverWrapper se,String pageName,String fieldName)
 	{
 		WebDriver driver=se.getDriver();
@@ -89,7 +105,7 @@ public class PageElementsHelper{
 		//System.out.println("PageName="+pageName+",FieldName="+fieldName);
 		try{
 		elementPathMap=allProps.get(pageName).get(fieldName);
-		}catch(Exception e){System.out.println("Error for:\nPageName="+pageName+",FieldName="+fieldName);e.printStackTrace();return null;}
+		}catch(Exception e){System.out.println(allProps);System.out.println("Error for:\nPageName="+pageName+",FieldName="+fieldName);e.printStackTrace();return null;}
 		WebElement we=null;
 		//By by=null;
 		String selector=null;

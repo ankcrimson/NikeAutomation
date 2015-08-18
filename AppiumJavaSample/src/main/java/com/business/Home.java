@@ -5,10 +5,12 @@ import io.appium.java_client.android.AndroidDriver;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.touch.TouchActions;
+import org.openqa.selenium.support.ui.Select;
 
 import com.helpers.DriverWrapper;
 import com.pages.HomePage;
@@ -39,6 +41,29 @@ public class Home extends CommonBusiness {
 		WebElement ref_element=page.getElement(wrapper, ref);
 		ref_element.click();
 	}
+	
+	public void scroll(DriverWrapper wrapper, int x,int y)
+	{
+		JavascriptExecutor jse=(JavascriptExecutor)wrapper.getDriver();
+		jse.executeScript("window.scrollBy("+x+","+y+")", "");
+	}
+	
+	public void select(DriverWrapper wrapper,String ref)
+	{
+		HomePage page=new HomePage();
+		Map<String,String> tags=page.getTagValue( ref);
+		String id=tags.get("ID");
+		JavascriptExecutor jse=(JavascriptExecutor)wrapper.getDriver();
+		jse.executeScript("document.getElementById('"+id+"').selectedIndex=1");
+		
+		/*
+		WebElement ref_element=page.getElement(wrapper, ref);
+		Select select=new Select(ref_element);
+		select.selectByIndex(1);//need to convert it to first available
+		ref_element.click();*/
+	}
+	
+	
 	public void choose(DriverWrapper wrapper,int n,String ref)
 	{
 		HomePage page=new HomePage();
