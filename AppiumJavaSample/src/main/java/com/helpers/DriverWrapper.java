@@ -95,10 +95,10 @@ public WebDriver getDriver()
 		{
 			try{
 			DesiredCapabilities  capabilities = new DesiredCapabilities();
-		    capabilities.setCapability("deviceName","iPhone Simulator");
+		    capabilities.setCapability("deviceName","iPhone 6");
 		    capabilities.setCapability("touchEnabled",true);
 		    capabilities.setCapability("browserName", "Safari");
-		    capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "7.1");
+		    capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "8.4");
 		    capabilities.setCapability("platformName", "iOS");
 		    
 		    driver = new IOSDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
