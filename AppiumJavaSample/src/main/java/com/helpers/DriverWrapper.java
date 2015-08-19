@@ -2,6 +2,7 @@ package com.helpers;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
 
 import java.net.URL;
 import java.util.Properties;
@@ -82,9 +83,22 @@ public WebDriver getDriver()
 			DesiredCapabilities  capabilities = new DesiredCapabilities();
 		    capabilities.setCapability("deviceName","Nirajbrands");
 		    capabilities.setCapability("touchEnabled",true);
-		    capabilities.setCapability("browserName", "Chrome");
+		    capabilities.setCapability("browserName", "Safari");
 		   // capabilities.setCapability(CapabilityType.BROWSER_NAME, "");
 		    capabilities.setCapability(CapabilityType.VERSION, "4.4.2");
+		    capabilities.setCapability("platformName", "iOS");
+		    
+		    driver = new IOSDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+			}catch(Exception ex){ex.printStackTrace();}
+		}
+		else if(device_os.equalsIgnoreCase("ios_simulator"))
+		{
+			try{
+			DesiredCapabilities  capabilities = new DesiredCapabilities();
+		    capabilities.setCapability("deviceName","iPhone Simulator");
+		    capabilities.setCapability("touchEnabled",true);
+		    capabilities.setCapability("browserName", "Safari");
+		    capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "7.1");
 		    capabilities.setCapability("platformName", "iOS");
 		    
 		    driver = new IOSDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
