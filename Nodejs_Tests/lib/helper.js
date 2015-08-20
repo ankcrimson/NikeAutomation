@@ -22,6 +22,7 @@ module.exports = {
    pause: function(browser,timee)
    {
    	browser.pause(browser,timee)
-   	 return this
+   	 console.log("pausing for "+timee);
+       return this
    }
     };
