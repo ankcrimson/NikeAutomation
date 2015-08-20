@@ -66,6 +66,7 @@
             "selenium_host"  : "localhost",
       "desiredCapabilities": {
 "platformName":"Android",
+"platformVersion":"4.3",
 "deviceName":"GT-I9100",
     "port" : 4723,
 "browserName":"Chrome",

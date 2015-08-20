@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="1"
+            tests="1">
+
+  <testsuite name="nike_guest_checkout"
+    errors="0" failures="1" hostname="" id="" package="nike_guest_checkout" skipped="0"
+    tests="1" time="58.13" timestamp="Thu, 20 Aug 2015 15:57:28 GMT">
+  
+    <testcase name="Guest Checkout FUnctionality" time="58.13" assertions="4">
+
+    
+
+    
+
+      <failure message="Timed out while waiting for element &lt;#main-content &gt; div &gt; div &gt; div &gt; div &gt; section.nike-cq-page-module.nike-cq-page-menu.nike-cq-mod-pos-2 &gt; div &gt; div &gt; div &gt; div &gt; div &gt; div &gt; div &gt; ul &gt; li.nike-cq-page-menu-item.nike-cq-page-menu-item1.nike-cq-page-menu-item-level1 &gt; div &gt; ul &gt; li.nike-cq-page-menu-item.nike-cq-page-menu-item2.nike-cq-page-menu-item-level2 &gt; div &gt; ul &gt; li.nike-cq-page-menu-item.nike-cq-page-menu-item2.nike-cq-page-menu-item-level3.nike-cq-page-menu-item-link-only &gt; a&gt; to be visible for 20000 milliseconds.">Timed out while waiting for element &lt;#main-content &gt; div &gt; div &gt; div &gt; div &gt; section.nike-cq-page-module.nike-cq-page-menu.nike-cq-mod-pos-2 &gt; div &gt; div &gt; div &gt; div &gt; div &gt; div &gt; div &gt; ul &gt; li.nike-cq-page-menu-item.nike-cq-page-menu-item1.nike-cq-page-menu-item-level1 &gt; div &gt; ul &gt; li.nike-cq-page-menu-item.nike-cq-page-menu-item2.nike-cq-page-menu-item-level2 &gt; div &gt; ul &gt; li.nike-cq-page-menu-item.nike-cq-page-menu-item2.nike-cq-page-menu-item-level3.nike-cq-page-menu-item-link-only &gt; a&gt; to be visible for 20000 milliseconds.: Expected &quot;visible&quot; but got: &quot;not visible&quot;
+    at F.WaitForElement.fail (/usr/local/lib/node_modules/nightwatch/lib/api/element-commands/_waitForElement.js:193:15)
+    at F.WaitForElementVisible.elementNotVisible (/usr/local/lib/node_modules/nightwatch/lib/api/element-commands/waitForElementVisible.js:61:15)
+    at Object.&lt;anonymous&gt; (/usr/local/lib/node_modules/nightwatch/lib/api/element-commands/_waitForElement.js:241:17)
+    at HttpRequest.&lt;anonymous&gt; (/usr/local/lib/node_modules/nightwatch/lib/index.js:311:20)
+    at HttpRequest.emit (events.js:110:17)
+    at HttpRequest.&lt;anonymous&gt; (/usr/local/lib/node_modules/nightwatch/lib/index.js:334:15)
+    at HttpRequest.emit (events.js:118:17)
+    at IncomingMessage.&lt;anonymous&gt; (/usr/local/lib/node_modules/nightwatch/lib/http/request.js:148:16)
+    at IncomingMessage.emit (events.js:129:20)
+    at _stream_readable.js:908:16</failure>
+
+    
+    </testcase>
+  
+  
+  </testsuite>
+</testsuites>
