@@ -5,13 +5,41 @@
 
   <testsuite name="nike_guest_checkout"
     errors="0" failures="1" hostname="" id="" package="nike_guest_checkout" skipped="0"
-    tests="1" time="79.29" timestamp="Fri, 21 Aug 2015 07:58:40 GMT">
+    tests="1" time="77.19" timestamp="Fri, 21 Aug 2015 08:34:18 GMT">
   
-    <testcase name="Guest Checkout FUnctionality" time="79.29" assertions="3">
+    <testcase name="Guest Checkout FUnctionality" time="77.19" assertions="17">
 
     
 
-      <failure message="Timed out while waiting for element &lt;#main-content &gt; div &gt; div &gt; div &gt; div &gt; section.nike-cq-page-module.nike-cq-page-menu.nike-cq-mod-pos-2 &gt; div &gt; div &gt; div &gt; div &gt; div &gt; div &gt; div &gt; ul &gt; li.nike-cq-page-menu-item.nike-cq-page-menu-item1.nike-cq-page-menu-item-level1.hide &gt; a&gt; to be present for 20000 milliseconds.">Timed out while waiting for element &lt;#main-content &gt; div &gt; div &gt; div &gt; div &gt; section.nike-cq-page-module.nike-cq-page-menu.nike-cq-mod-pos-2 &gt; div &gt; div &gt; div &gt; div &gt; div &gt; div &gt; div &gt; ul &gt; li.nike-cq-page-menu-item.nike-cq-page-menu-item1.nike-cq-page-menu-item-level1.hide &gt; a&gt; to be present for 20000 milliseconds.: Expected &quot;visible&quot; but got: &quot;not found&quot;
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+      <failure message="Timed out while waiting for element &lt;#fname&gt; to be present for 10000 milliseconds.">Timed out while waiting for element &lt;#fname&gt; to be present for 10000 milliseconds.: Expected &quot;visible&quot; but got: &quot;not found&quot;
     at F.WaitForElement.fail (C:\Users\319113\AppData\Roaming\npm\node_modules\nightwatch\lib\api\element-commands\_waitForElement.js:193:15)
     at F.WaitForElementPresent.elementNotFound (C:\Users\319113\AppData\Roaming\npm\node_modules\nightwatch\lib\api\element-commands\waitForElementPresent.js:57:15)
     at Object.&lt;anonymous&gt; (C:\Users\319113\AppData\Roaming\npm\node_modules\nightwatch\lib\api\element-commands\_waitForElement.js:220:17)
