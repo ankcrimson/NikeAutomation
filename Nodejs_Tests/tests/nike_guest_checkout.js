@@ -11,18 +11,27 @@ module.exports = {
     .wait_click(browser,'#main-content > div > div > div > div > section.nike-cq-page-module.nike-cq-page-menu.nike-cq-mod-pos-2 > div > div > div > div > div > div > div > ul > li.nike-cq-page-menu-item.nike-cq-page-menu-item1.nike-cq-page-menu-item-level1 > div > ul > li.nike-cq-page-menu-item.nike-cq-page-menu-item2.nike-cq-page-menu-item-level2.hide > a')
     .wait_click(browser,'#main-content > div > div > div > div > section.nike-cq-page-module.nike-cq-page-menu.nike-cq-mod-pos-2 > div > div > div > div > div > div > div > ul > li.nike-cq-page-menu-item.nike-cq-page-menu-item1.nike-cq-page-menu-item-level1 > div > ul > li.nike-cq-page-menu-item.nike-cq-page-menu-item2.nike-cq-page-menu-item-level2 > div > ul > li.nike-cq-page-menu-item.nike-cq-page-menu-item2.nike-cq-page-menu-item-level3.nike-cq-page-menu-item-link-only > a')
     .wait_click(browser,'#exp-gridwall-wrapper > div.exp-gridwall > div > div > div.exp-product-wall > div:nth-child(2) > div > div > div.grid-item-image > div > a > img')
+<<<<<<< HEAD
     .executeAsync(browser,'javascript:window.scrollBy(0,350)')
 //    .wait_click(browser,'#pdp-size-select')
     .wait_click(browser,'#frm-size-select option:nth-child(2)')
     .executeAsync(browser,'javascript:document.getElementById("frm-size-select").selectedIndex=2')
+=======
+    .executeAsync(browser,'window.scrollBy(0,350)')
+//    .wait_click(browser,'#pdp-size-select')
+    .wait_click(browser,'#frm-size-select option:nth-child(2n)')
+>>>>>>> ca74a8d68861f93a670ef28da3fa80dbc3dc5747
     .wait_click(browser,'#add-to-cart-btn')
    // .pause_1(browser,15000)
 //    .wait_click(browser,'#header > div.tier0 > a.cart')
     .wait_click(browser,'a.cart')
+<<<<<<< HEAD
   //  .pause_1(browser,6000)
     //.wait_click(browser,'div.js-guestCheckout.ch4_btn.ch4_btnOrange.cartButton')
     .wait_click(browser,'div.cartButton')
     .executeAsync(browser,'javascript:window.scrollBy(0,800)')
+=======
+>>>>>>> ca74a8d68861f93a670ef28da3fa80dbc3dc5747
     .wait_setValue(browser,'#fname','Capt Jack')
     .wait_setValue(browser,'#lname','Sparrow')
     .wait_setValue(browser,'#address1Field','Black Perl')
