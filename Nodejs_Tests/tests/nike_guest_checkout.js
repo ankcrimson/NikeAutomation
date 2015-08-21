@@ -15,7 +15,7 @@ module.exports = {
 //    .wait_click(browser,'#pdp-size-select')
     .wait_click(browser,'#frm-size-select option:nth-child(2n)')
     .wait_click(browser,'#add-to-cart-btn')
- //   .pause(browser,15000)
+   // .pause_1(browser,15000)
 //    .wait_click(browser,'#header > div.tier0 > a.cart')
     .wait_click(browser,'a.cart')
     .wait_setValue(browser,'#fname','Capt Jack')
